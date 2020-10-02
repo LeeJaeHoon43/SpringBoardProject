@@ -5,6 +5,7 @@
 <configuration>
 	<properties resource="db.properties"></properties>
 	<mappers>
-		<mapper resource="mappers/boardMapper.xml" />
+		<mapper resource="mappers/boardMapper.xml"/>
+		<mapper resource="mappers/replyMapper.xml"/>
 	</mappers>
 </configuration>
