@@ -7,5 +7,6 @@
 	<mappers>
 		<mapper resource="mappers/boardMapper.xml"/>
 		<mapper resource="mappers/replyMapper.xml"/>
+		<mapper resource="mappers/memberMapper.xml"/>
 	</mappers>
 </configuration>

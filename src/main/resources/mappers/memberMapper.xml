@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="memberMapper">
+	<insert id="register">
+		INSERT INTO mp_member(userid, userpass, username) VALUES(#{userId}, #{userPass}, #{userName})
+	</insert>
+	
+	<select id="login" resultType="kr.co.vo.MemberVO">
+		SELECT userid, userpass, username FROM mp_member WHERE userid = #{userId} AND userpass = #{userPass}
+	</select>
+	
+	<update id="memberUpdate">
+		UPDATE mp_member SET userpass = #{userPass}, username = #{userName} WHERE userid = #{userId}
+	</update>
+	
+	<delete id="memberDelete">
+		DELETE FROM mp_member WHERE userid = #{userId} AND userpass = #{userPass}
+	</delete>
+</mapper>
