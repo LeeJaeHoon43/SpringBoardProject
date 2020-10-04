@@ -23,5 +23,4 @@
 	<select id="selectReply" resultType="kr.co.vo.ReplyVO">
 		SELECT bno, rno, content, writer, regdate FROM mp_reply WHERE rno = #{rno}
 	</select>
-
 </mapper>

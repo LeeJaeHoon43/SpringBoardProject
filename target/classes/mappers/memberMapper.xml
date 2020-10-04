@@ -8,14 +8,22 @@
 	</insert>
 	
 	<select id="login" resultType="kr.co.vo.MemberVO">
-		SELECT userid, userpass, username FROM mp_member WHERE userid = #{userId} AND userpass = #{userPass}
+		SELECT userid, userpass, username FROM mp_member WHERE userid = #{userId}
 	</select>
 	
 	<update id="memberUpdate">
-		UPDATE mp_member SET userpass = #{userPass}, username = #{userName} WHERE userid = #{userId}
+		UPDATE mp_member SET username = #{userName} WHERE userid = #{userId}
 	</update>
 	
 	<delete id="memberDelete">
-		DELETE FROM mp_member WHERE userid = #{userId} AND userpass = #{userPass}
+		DELETE FROM mp_member WHERE userid = #{userId}
 	</delete>
+	
+	<select id="passChk" resultType="int">
+		SELECT COUNT(*) FROM mp_member WHERE userid = #{userId} AND userpass = #{userPass}
+	</select>
+	
+	<select id="idChk" resultType="int">
+		SELECT COUNT(*) FROM mp_member WHERE userid = #{userId}
+	</select>
 </mapper>
